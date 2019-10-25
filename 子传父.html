@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>子传父</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"> </script>
+</head>
+<body>
+    <div id="app">
+        <consona v-on:givecounta='getcounta'></consona>
+        <consonb v-on:givecountb='getcountb'></consonb>
+        <p>结果：{{counta+countb}}</p>
+    </div>
+    <script>
+        Vue.component('consona',{
+
+        //     beforeCreated(){
+        //     console.log('beforeCreated',this.count,this.$el); 
+        //     console.log(document.getElementById("app"));
+               
+        // },
+        // created(){
+        //     console.log('created',this.count,this.$el); 
+        //     console.log(document.getElementById("app"));
+        // },
+        // beforeMount(){
+        //     console.log('beforeMount',this.count,this.$el); 
+        //     console.log(document.getElementById("app"));
+        // },
+        // nounted(){
+        //     console.log('nounted',this.count,this.$el); 
+        //     console.log(document.getElementById("app"));
+        // },
+        // beforeUpdate(){
+        //     console.log('beforeUpdate',this.count,this.$el);
+        //     console.log(document.getElementById("app")); 
+        // },
+        // updated(){
+        //     console.log('updated',this.count,this.$el); 
+        //     console.log(document.getElementById("app"));
+        // },
+        // beforeDestroy(){
+        //     console.log('beforeDestroy',this.count,this.$el); 
+        //     console.log(document.getElementById("app"));
+        // },
+        // destroyed(){
+        //     console.log('destroyed',this.count,this.$el); 
+        //     console.log(document.getElementById("app"));
+        // },
+
+            data:function(){
+                return {
+                    count:0
+                }
+            },
+            methods:{
+                //子组件a通过this.$emit,将子组件的值发射，第一个参数理解为 名字
+                // 在父组件中，子组件使用的位置，通过v-on 监听$emit 发射的  名字。并作出反应（我这里将参数通过函数传递给父组件。）
+                //在父组件中使用子组件的数据 。
+                addconunt(){
+                    this.count++;
+                    this.$emit('givecounta',this.count)
+              }
+            },
+            template:`<button @click="addconunt">You clicked me {{ count }} times.</button>`       
+        })
+        Vue.component('consonb',{
+            data:function(){
+                return {
+                    count:0
+                }
+            },
+            methods:{
+                addconunt(){
+                    this.count++;
+                    console.log(this.count);
+                    
+                    this.$emit('givecountb',this.count)
+                }
+            },
+            template:`<button @click="addconunt">You clicked me {{ count }} times.</button>`       
+        })
+     var vm = new Vue({
+        el:'#app',
+        data:{
+            a:"dataA",
+            isShow:false,
+            counta:"",
+            countb:""
+        },
+        methods:{
+            getcounta(count){
+                this.counta=count
+            },
+            getcountb(count){
+                this.countb=count
+            }
+        }
+        })
+    </script>
+</body>
+</html>
