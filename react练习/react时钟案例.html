@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>React第一次尝试</title>
+    <script src="https://unpkg.com/react@16/umd/react.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js" crossorigin></script>
+    <script src="./babel-min.js"></script>
+
+</head>
+<body>
+    
+    <div id="root"></div>
+
+    <script type="text/babel">
+    //先定义一个时钟组件
+    function Clock(props) {
+        return (
+            <div>
+                <h1>timeClock</h1>
+                <h2>it is {props.date.toLocaleTimeString()} </h2>
+            </div>
+        );
+    }
+//定义一个函数来渲染组件
+    function tick() {
+        ReactDOM.render(
+            <Clock date={new Date()} />,
+            document.getElementById('root')
+        );
+    }
+    //将tick函数放到定时器中以达到多次渲染组件的目的。
+    setInterval(tick, 1000);
+    </script>
+
+    
+</body>
+</html>

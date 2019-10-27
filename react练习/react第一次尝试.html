@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>React第一次尝试</title>
+    <script src="./react-all.js" ></script>
+    <script src="./react-dom-all.js" ></script>
+    <script src="./babel-min.js"></script>
+
+</head>
+<body>
+    
+    <div id="firstTime"></div>
+
+    <script type="text/babel">
+    const element = <h1>hello,world!</h1>;
+    ReactDOM.render( element , document.getElementById('firstTime'))
+
+        function FirstTry(props) {
+            return <h1>hello,{props.name}!</h1>
+        }//定义一个组件，接收参数
+
+        const one = <FirstTry name="first"/>//将参数first放在组件上传递进去
+        ReactDOM.render(
+           one,
+           document.getElementById('firstTime') 
+        )
+
+
+
+    </script>
+
+    
+</body>
+</html>

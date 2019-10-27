@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>时钟案例class写法</title>
+    <script src="https://unpkg.com/react@16/umd/react.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js" crossorigin></script>
+    <script src="./babel-min.js"></script>
+
+</head>
+<body>
+    
+    <div id="root"></div>
+
+    <script type="text/babel">
+    class Clock extends React.Component {
+        render(){
+            return (
+                <div>
+                    <h1>timeClock</h1>
+                    <h2>{this.props.time.toLocaleTimeString()}</h2>
+                </div>
+            )
+        }
+    }
+
+    function tick() {
+        ReactDOM.render(<Clock time={new Date()} />,document.getElementById('root'))
+    }
+    setInterval(tick,1000 );
+
+
+    </script>
+
+    
+</body>
+</html>
