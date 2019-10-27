@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>生命周期</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"> </script>
+</head>
+<body>
+    <div id="app">
+        <input type="text" v-model=a>
+        <p>{{a}}</p>
+        <template v-if="isShow">
+            <div>显示</div>
+            <div>显示</div>
+            <div>显示</div>
+        </template>
+        <div v-lese='isShow' > 隐藏</div>
+    </div>
+
+    <script>
+    var vm = new Vue({
+        el:'#app',
+        data:{
+            a:"this is a !",
+            isShow:false,
+        },
+        beforeCreated(){
+            console.log('beforeCreated',this.a,this.$el); 
+            console.log(document.getElementById("app"));
+               
+        },
+        created(){
+            console.log('created',this.a,this.$el); 
+            console.log(document.getElementById("app"));
+        },
+        beforeMount(){
+            console.log('beforeMount',this.a,this.$el); 
+            console.log(document.getElementById("app"));
+        },
+        nounted(){
+            console.log('nounted',this.a,this.$el); 
+            console.log(document.getElementById("app"));
+        },
+        beforeUpdate(){
+            console.log('beforeUpdate',this.a,this.$el);
+            console.log(document.getElementById("app")); 
+        },
+        updated(){
+            console.log('updated',this.a,this.$el); 
+            console.log(document.getElementById("app"));
+        },
+        beforeDestroy(){
+            console.log('beforeDestroy',this.a,this.$el); 
+            console.log(document.getElementById("app"));
+        },
+        destroyed(){
+            console.log('destroyed',this.a,this.$el); 
+            console.log(document.getElementById("app"));
+        },
+        
+    })
+    
+    </script>
+</body>
+</html>
