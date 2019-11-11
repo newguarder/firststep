@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>父向子</title>
+    <script src="./react-all.js" ></script>
+    <script src="./react-dom-all.js" ></script>
+    <script src="./babel-min.js"></script>
+
+</head>
+<body>
+    
+    <div id="root"></div>
+
+    <script type="text/babel">
+
+
+
+    class Father extends React.Component{
+        constructor(props){
+            super(props);
+            this.state={
+                fatherSaid:"父组件里面的信息"
+            }
+        }
+        render(){
+            return(
+            <div>
+                <h1>父亲说：{this.state.fatherSaid}</h1>
+                <Son word={this.state.fatherSaid} />
+            </div>
+            )
+        }    
+    }
+
+    class Son extends React.Component{
+        constructor(props){
+            super(props);
+            this.state={
+                toFather:"子对父说的话"
+            }
+        };
+        render(){
+            return (
+                <div>
+                    <h1>儿子说：这是{this.props.word}</h1>    
+                </div>
+            )
+            
+        }
+    }
+
+    ReactDOM.render(<Father />,document.getElementById('root'))
+  
+
+
+
+    </script>
+
+    
+</body>
+</html>
