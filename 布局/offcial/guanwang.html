@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="content">
+        <div class="swiperOne"></div>
+        <div class="swipertwo"></div>
+        <div class="swiperthree"></div>
+    </div>
+    
+</body>
+
+<style>
+
+body{
+    margin: 0;
+    padding: 0;
+}
+.content{
+    position: relative;
+    width: 100%;
+    height: 500px;
+    
+}
+.swiperOne{
+    position: absolute;
+    z-index: 999;
+    background:rgba(108,99,255,1);
+    border-radius:0px 48px 48px 0px;
+    height: 500px;
+    width: 70%;
+    top: 0;
+    left: 0;
+}
+.swipertwo{
+    position: absolute;
+    z-index: 99;
+    height: 400px;
+    width: 80%;
+    top: 50px;
+    border-radius:0px 48px 48px 0px;
+    bottom: 50px;
+    left: 0;
+    width: 80%;
+    background-color: #A9A4FF;
+}
+.swiperthree{
+    position: absolute;
+    z-index: 9;
+    height: 300px;
+    width: 90%;
+    top: 100px;
+    bottom: 100px;
+    border-radius:0px 48px 48px 0px;
+    left: 0;
+    background-color: #D2CFFF;
+}
+
+
+</style>
+</html>
