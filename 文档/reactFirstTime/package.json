@@ -1,0 +1,21 @@
+{
+  "name": "reactfirsttime",
+  "version": "1.0.0",
+  "description": "",
+  "main": "react-dom.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "reactFirstTime"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "anywhere": "^1.5.0",
+    "babel": "^6.23.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.6.4"
+  }
+}
